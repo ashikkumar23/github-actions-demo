@@ -1,0 +1,17 @@
+assertpy==1.0
+configparser==5.0.0
+cucumber-tag-expressions==2.0.4
+diffimg==0.2.3
+python-dotenv==0.13.0
+imutils==0.5.3
+opencv-python==4.2.0.34
+py==1.8.1
+pylint==2.5.2
+pytest==5.4.2
+pytest-base-url==1.4.1
+pytest-bdd==3.4.0
+pytest-rerunfailures==9.0
+pytest-xdist==1.32.0
+python-dateutil==2.8.1
+PyYAML==5.3.1
+requests==2.23.0
