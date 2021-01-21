@@ -10,13 +10,7 @@ class Env:
         self.env = env
 
     def get_dummy_rest_api_version(self):
-        env = None
-        if self == "/api/v1":
-            env = os.environ.get("DUMMY_REST_API_V1")
-        return env
+        return os.environ.get("DUMMY_REST_API_V1") if self == "/api/v1" else None
 
     def get_employee_id(self):
-        env = None
-        if self == "id":
-            env = os.environ.get("EMPLOYEE_ID")
-        return env
+        return os.environ.get("EMPLOYEE_ID") if self == "id" else None
