@@ -21,7 +21,31 @@ jobs:
           cd tests/
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Prepare allure history
+        run: |
+          mkdir -p allure-results
       - name: Run tests with pytest
         run: |
           cd tests/
-          python -m pytest -v --gherkin-terminal-reporter -s --tags="smoke"
+          python -m pytest -v --gherkin-terminal-reporter -s --tags="smoke" --alluredir=../allure-results
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages-report
+          path: gh-pages-report
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+      - name: Deploy allure report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages-report
+          PUBLISH_DIR: allure-history
