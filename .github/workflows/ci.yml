@@ -7,7 +7,7 @@ name: Run Smoke Tests
     branches:
       - main
 jobs:
-  build:
+  run-automated-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -26,7 +26,6 @@ jobs:
 
       - name: Prepare allure history
         run: |
-          cd ..
           mkdir -p allure-results
 
       - name: Run tests with pytest
