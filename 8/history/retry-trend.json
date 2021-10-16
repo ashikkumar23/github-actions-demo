@@ -1,0 +1,9 @@
+[ {
+  "buildOrder" : 8,
+  "reportUrl" : "https://ashikkumar23.github.io/github-actions-demo/8/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 0,
+    "retry" : 0
+  }
+} ]
