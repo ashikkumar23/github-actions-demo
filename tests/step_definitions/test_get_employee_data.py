@@ -4,7 +4,7 @@ from pytest_bdd import when, scenarios, then, parsers
 
 from step_definitions.test_common import get_request
 
-scenarios('get_employee_data.feature', strict_gherkin=False)
+scenarios('get_employee_data.feature')
 
 
 @pytest.fixture(scope='session')
